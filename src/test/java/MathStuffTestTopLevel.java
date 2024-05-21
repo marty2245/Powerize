@@ -1,9 +1,7 @@
 import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
-
 
 /**
  * Test cases for top-level methods in {@code MathStuff}.
