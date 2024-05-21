@@ -27,6 +27,39 @@ public class MathStuffTestTopLevel {
         assertEquals(expResult, result, "result");
     }
 
+    @Test
+    public void testExceptions() {
+        boolean thrown = false;
+        try {
+            MathStuff.powerize(1);
+        } catch (IllegalArgumentException e) {
+            thrown = true;
+        }
+        assertTrue(thrown);
+    }
+
+    @Test
+    public void testExceptions1() {
+        boolean thrown = false;
+        try {
+            MathStuff.power(2, -1);
+        } catch (IllegalArgumentException e) {
+            thrown = true;
+        }
+        assertTrue(thrown);
+    }
+
+    @Test
+    public void testExceptions2() {
+        boolean thrown = false;
+        try {
+            MathStuff.power(-1, 2);
+        } catch (IllegalArgumentException e) {
+            thrown = true;
+        }
+        assertTrue(thrown);
+    }
+
     /** Smallest exponent. */
     @Test
     public void testPower0() {
@@ -242,5 +275,9 @@ public class MathStuffTestTopLevel {
         checkPowerize(7, 10);
     }
 
+    @Test 
+    public void test21(){
+        
+    }
 
 }
