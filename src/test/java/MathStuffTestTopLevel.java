@@ -133,25 +133,34 @@ public class MathStuffTestTopLevel {
         );
     }
 
-    /**
-     * Tests a simple powerize function.
-     */
+    //2^8 as it can lead to different results
     @Test
-    public void testSimpleFunction() {
-        checkPowerize(2, 3);
+    public void test0() {
+        checkPowerize(2, 8);
     }
 
+    //easy one
+    @Test
+    public void test1() {
+        checkPowerize(10, 2);
+    }
+
+    //random test
     @Test
     public void test2() {
         checkPowerize(90, 3);
     }
 
-    /**
-     * Tests function with maximal input.
-     */
+    //max integer test
     @Test
     public void test3() {
         checkPowerize(Integer.MAX_VALUE, 1);
+    }
+
+    //a large square of prime numbers
+    @Test
+    public void test4() {
+        checkPowerize(997, 2);
     }
 
 }
