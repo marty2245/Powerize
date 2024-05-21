@@ -135,7 +135,61 @@ public class MathStuffTestTopLevel {
 
     //2^8 as it can lead to different results
     @Test
-    public void test0() {
+    public void test10() {
+        checkPowerize(12, 1);
+    }
+
+    //easy one
+    @Test
+    public void test11() {
+        checkPowerize(10, 2);
+    }
+
+    //random test
+    @Test
+    public void test12() {
+        checkPowerize(90, 3);
+    }
+
+    //max integer test
+    @Test
+    public void test13() {
+        checkPowerize(Integer.MAX_VALUE, 1);
+    }
+
+    //a large square of prime numbers
+    @Test
+    public void test14() {
+        checkPowerize(997, 2);
+    }
+
+    @Test
+    public void test15() {
+        checkPowerize(6, 5);
+    }
+
+    @Test
+    public void test16() {
+        checkPowerize(6, 10);
+    }
+
+    @Test
+    public void test17() {
+        checkPowerize(2, 18);
+    }
+
+    @Test
+    public void test18() {
+        checkPowerize(3, 16);
+    }
+
+    @Test
+    public void test19() {
+        checkPowerize(7, 10);
+    }
+
+    @Test
+    public void test20() {
         checkPowerize(2, 8);
     }
 
@@ -162,5 +216,31 @@ public class MathStuffTestTopLevel {
     public void test4() {
         checkPowerize(997, 2);
     }
+
+    @Test
+    public void test5() {
+        checkPowerize(6, 5);
+    }
+
+    @Test
+    public void test6() {
+        checkPowerize(6, 10);
+    }
+
+    @Test
+    public void test7() {
+        checkPowerize(2, 18);
+    }
+
+    @Test
+    public void test8() {
+        checkPowerize(3, 16);
+    }
+
+    @Test
+    public void test9() {
+        checkPowerize(7, 10);
+    }
+
 
 }
