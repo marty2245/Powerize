@@ -9,5 +9,5 @@ import org.junit.jupiter.api.Test;
  * Martina Markova, 1942026, 18.05.2024
  */
 public class MathStuffTestAuxiliary {
-
+    
 }

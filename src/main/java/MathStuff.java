@@ -2,7 +2,7 @@ import java.util.*;
 
 /**
  * Library with static mathematical functions.
- * Martina Markova, 1942026, 18.05.2024
+ * Martina Markova, 1942026, 21.05.2024
  */
 public abstract class MathStuff {
 
@@ -110,59 +110,39 @@ public abstract class MathStuff {
         if (n < 2) {
             throw new IllegalArgumentException("The number must be at least 2.");
         }
-        int[] answer;
-        answer = new int[100000];
-        int[] number;
-        number = new int[100000];
-        int currentPos = 0;
-        int currentExp = 0;
-        int gcdAns;
-        int exponent;
-        int base = 1;
-
-        for (int i = 2; i <= Math.sqrt(n); i++) {
-            if (n % i == 0) {
-                currentExp = 0;
-                while (n % i == 0) {
-                    n /= i;
-                    currentExp++;
-                }
-                answer[currentPos] = i;
-                number[currentPos] = currentExp;
-                currentPos++;
+        Power result = new Power(0, 0); //initialize variable
+        for (int i = 1; i <= 32; i++) {
+            int current = binarySearch(n, i); 
+            if (current > 0) {
+                result = new Power(current, i);
             }
         }
-
-        gcdAns = findGCD(number);
-        exponent = gcdAns;
-        for (int i = 0; i < number.length; i++) {
-            base *= power(answer[i], number[i] / gcdAns);
-        }
-        Power finalAns = new Power(base, exponent);
-        return finalAns;
+        return result;
     }
 
     /**
-     * .
+     * Implementation of binary search.
+     * @param n - the given number
+     * @param exp - desired exponent
+     * @return - if such a base exists, we return it, otherwise we return -1.
      */
-    static int findGCD(int[] number) {
-        int ans = number[0];
-        for (int i = 1; i < number.length; i++){
-            ans = gcd(ans, number[i]);
-        }
-        return ans;
+    public static int binarySearch(int n, int exp) {
+        long answer; 
+        int left = 0; 
+        int right = n; 
+        int mid;
+        while (left <= right) {
+            mid = left +  (right - left) / 2; 
+            answer = power(mid, exp); 
+            if (answer == n) {
+                return mid;
+            } else if (answer > n) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        } 
+        return -1;
     }
 
-    /**
-     * .
-     */
-    public static int gcd(int a, int b) {
-        while (b != 0) {
-            int temp = b;
-            b = a % b;
-            a = temp;
-        }
-        return a;
-    }
-    
 }

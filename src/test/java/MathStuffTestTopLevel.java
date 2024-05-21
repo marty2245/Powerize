@@ -133,8 +133,25 @@ public class MathStuffTestTopLevel {
         );
     }
 
-//# BEGIN TODO: Implementations of test cases for powerize(int)
-// Replace this line
-//# END TODO
+    /**
+     * Tests a simple powerize function.
+     */
+    @Test
+    public void testSimpleFunction() {
+        checkPowerize(2, 3);
+    }
+
+    @Test
+    public void test2() {
+        checkPowerize(90, 3);
+    }
+
+    /**
+     * Tests function with maximal input.
+     */
+    @Test
+    public void test3() {
+        checkPowerize(Integer.MAX_VALUE, 1);
+    }
 
 }
